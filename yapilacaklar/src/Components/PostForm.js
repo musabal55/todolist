@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+
 class PostForm extends Component {
 	constructor(props) {
 		super(props)
@@ -39,6 +40,7 @@ class PostForm extends Component {
 	render() {
 		const { userId, title, body } = this.state
 		return (
+			
 			<div>
 				
 				
@@ -84,7 +86,11 @@ class PostForm extends Component {
 					<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
 				</form>
+
+				
+				
 			</div>
+			
 		)
 	}
 }

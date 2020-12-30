@@ -14,6 +14,8 @@ componentDidMount() {
     })
 }
 
+
+
 deleteRow(id, e){
     axios.delete(`http://localhost:3002/posts/${id}`)
       .then(res => {
@@ -25,6 +27,31 @@ deleteRow(id, e){
       })
   
   }
+
+
+
+
+
+//   updateRow(id, e){
+//   console.log(id)
+
+
+//     axios.get(`http://localhost:3002/posts/${id}`)
+//       .then(res => {
+//         console.log(res);
+//         console.log(res.data);
+
+//        const {userId, id, title, body} = res.data
+//         console.log(userId)
+  
+//         // this.state.users = res.data
+//         this.setState({ 
+//              users:res.data
+//           });
+         
+//       })
+  
+//   }
 
 
     render() {
@@ -50,7 +77,7 @@ deleteRow(id, e){
                     <td>{item.body}</td> 
                     <td>
                     <button className="btn btn-danger" onClick={(e) => this.deleteRow(item.id, e)}>Sil</button>
-                    <button className="btn btn-info" >Düzenle</button>
+                    <button className="btn btn-info" onClick={(e) => this.updateRow(item.id, e)}>Düzenle</button>
                     </td>
                 </tr>
                     ))}
