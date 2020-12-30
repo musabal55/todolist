@@ -1,0 +1,21 @@
+{
+  "todolist": [
+    {
+      "id": 1,
+      "todo": "ekmek"
+    },
+    {
+      "id": 2,
+      "todo": "ekmek"
+    },
+    {
+      "id": 3,
+      "todo": "ekmek"
+    },
+    {
+      "id": 4,
+      "todo": "ekmek"
+    }
+  ]
+}
+

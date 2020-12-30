@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "name": "Veli Kara",
+      "salary": "90000",
+      "department": "İK"
+    },
+    {
+      "id": 4,
+      "name": "Semih Gün",
+      "salary": "90000",
+      "department": "İK"
+    },
+    {
+      "id": 5,
+      "name": "Kenan Ay",
+      "salary": "90000",
+      "department": "İK"
+    },
+    {
+      "id": 6,
+      "name": "Emre",
+      "salary": "60000",
+      "department": "İK"
+    }
+  ]
+}
