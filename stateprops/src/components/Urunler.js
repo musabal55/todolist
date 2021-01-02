@@ -6,7 +6,8 @@ class Urunler extends Component {
         
         return (
             <div>
-              <p>Ürün No: {this.props.id}, Ürün Adı: {this.props.name}, Fiyatı: {this.props.price}</p> 
+              {this.props.title} 
+              {console.log("logum:"+this.props.title)}
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 class PostForm extends Component {
 	constructor(props) {
@@ -27,7 +28,7 @@ class PostForm extends Component {
 		} else {			
 			console.log(this.state)
 			axios
-				.post('http://localhost:3002/posts', this.state)
+				.post('http://localhost:3004/posts', this.state)
 				.then(response => {
 					console.log(response)
 				})
@@ -83,7 +84,7 @@ class PostForm extends Component {
 						/>
 					</div>
 					
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="submit" class="btn btn-primary">Kaydet</button>
 					</div>
 				</form>
 
