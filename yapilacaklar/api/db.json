@@ -1,22 +1,10 @@
 {
   "posts": [
     {
-      "userId": 8,
-      "id": 76,
-      "title": "doloremque officiis ad et non perferendis",
-      "body": "ut animi facere\ntotam iusto tempore\nmolestiae eum aut et dolorem aperiam\nquaerat recusandae totam odio"
-    },
-    {
-      "userId": 8,
-      "id": 75,
-      "title": "dignissimos eum dolor ut enim et delectus in",
-      "body": "commodi non non omnis et voluptas sit\nautem aut nobis magnam et sapiente voluptatem\net laborum repellat qui delectus facilis temporibus\nrerum amet et nemo voluptate expedita adipisci error dolorem"
-    },
-    {
-      "userId": 8,
-      "id": 74,
+      "userId": "8",
       "title": "enim unde ratione doloribus quas enim ut sit sapiente",
-      "body": "odit qui et et necessitatibus sint veniam\nmollitia amet doloremque molestiae commodi similique magnam et quam\nblanditiis est itaque\nquo et tenetur ratione occaecati molestiae tempora"
+      "body": "odit qui et et necessitatibus sint veniam\nmollitia amet doloremque molestiae commodi similique magnam et quam\nblanditiis est itaque\nquo et tenetur ratione occaecati molestiae tempora",
+      "id": 74
     },
     {
       "userId": 8,
@@ -26,21 +14,21 @@
     },
     {
       "userId": 8,
-      "id": 72,
-      "title": "sint hic doloribus consequatur eos non id",
-      "body": "quam occaecati qui deleniti consectetur\nconsequatur aut facere quas exercitationem aliquam hic voluptas\nneque id sunt ut aut accusamus\nsunt consectetur expedita inventore velit"
+      "title": "düzenle değişti",
+      "body": "quam occaecati qui deleniti consectetur\nconsequatur aut facere quas exercitationem aliquam hic voluptas\nneque id sunt ut aut accusamus\nsunt consectetur expedita inventore velit",
+      "id": 72
     },
     {
       "userId": 8,
-      "id": 71,
-      "title": "et iusto veniam et illum aut fuga",
-      "body": "occaecati a doloribus\niste saepe consectetur placeat eum voluptate dolorem et\nqui quo quia voluptas\nrerum ut id enim velit est perferendis"
+      "title": "2222et iusto veniam et illum aut fuga",
+      "body": "999999999999",
+      "id": 71
     },
     {
       "userId": 7,
-      "id": 70,
-      "title": "voluptatem laborum magni",
-      "body": "sunt repellendus quae\nest asperiores aut deleniti esse accusamus repellendus quia aut\nquia dolorem unde\neum tempora esse dolore"
+      "title": "değiştirildi",
+      "body": "sunt repellendus quae\nest asperiores aut deleniti esse accusamus repellendus quia aut\nquia dolorem unde\neum tempora esse dolore",
+      "id": 70
     },
     {
       "userId": 7,
@@ -137,9 +125,6 @@
       "id": 53,
       "title": "ut quo aut ducimus alias",
       "body": "minima harum praesentium eum rerum illo dolore\nquasi exercitationem rerum nam\nporro quis neque quo\nconsequatur minus dolor quidem veritatis sunt non explicabo similique"
-    },
-    {
-      "id": 52
     },
     {
       "userId": 6,

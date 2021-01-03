@@ -13,19 +13,16 @@ class PostForm extends Component {
 		}
 	}
 
-	changeHandler = e => 
-		{	 
+	changeHandler = e => {
 		this.setState({ [e.target.name]: e.target.value })
-		}
+	}
 
 
-	submitHandler = e => 
-	{
-		if (this.state.userId === "" || this.state.title === "" || this.state.body === "" )
-		{
+	submitHandler = e => {
+		if (this.state.userId === "" || this.state.title === "" || this.state.body === "") {
 			e.preventDefault()
 			console.log("boş")
-		} else {			
+		} else {
 			console.log(this.state)
 			axios
 				.post('http://localhost:3004/posts', this.state)
@@ -34,21 +31,21 @@ class PostForm extends Component {
 				})
 				.catch(error => {
 					console.log(error)
-				})			
-		}			
+				})
+		}
 	}
 
 	render() {
 		const { userId, title, body } = this.state
 		return (
-			
+
 			<div>
-				
-				
+
+
 				<form onSubmit={this.submitHandler}>
 					<div className="form-group col-md-6 mb-6">
-					<h1>Yeni Kayıt</h1>
-					
+						<h1>Yeni Kayıt</h1>
+
 						<input
 							type="text"
 							className="form-control"
@@ -58,42 +55,44 @@ class PostForm extends Component {
 							value={userId}
 							onChange={this.changeHandler}
 						/>
-					
-					<div>
-					
-						<input
-							type="text"
-							className="form-control"
-							id="formGroupExampleInput"
-							placeholder="Başlık gir"
-							name="title"
-							value={title}
-							onChange={this.changeHandler}
-						/>
-					</div>
-					<div>
 
-						<input
-							type="text"
-							className="form-control"
-							id="formGroupExampleInput"
-							placeholder="Açıklama gir"
-							name="body"
-							value={body}
-							onChange={this.changeHandler}
-						/>
-					</div>
-					
-					<button type="submit" class="btn btn-primary">Kaydet</button>
+						<div>
+
+							<input
+								type="text"
+								className="form-control"
+								id="formGroupExampleInput"
+								placeholder="Başlık gir"
+								name="title"
+								value={title}
+								onChange={this.changeHandler}
+							/>
+						</div>
+						<div>
+
+							<input
+								type="text"
+								className="form-control"
+								id="formGroupExampleInput"
+								placeholder="Açıklama gir"
+								name="body"
+								value={body}
+								onChange={this.changeHandler}
+							/>
+						</div>
+
+						<button type="submit" class="btn btn-primary">Kaydet</button>
 					</div>
 				</form>
 
-				
-				
+
+
 			</div>
-			
+
 		)
 	}
 }
 
 export default PostForm;
+
+

@@ -8,122 +8,138 @@ import App from "../App"
 class Update extends Component {
 	constructor(props) {
 		super(props)
-        
+
 		this.state = {
-			users :[],
-			id: props.match.params.id,
-			getURL:"http://localhost:3004/posts/"	
-		}
-	}
-
-	// changeHandler = e => 
-	// 	{	 
-	// 	this.setState({ [e.target.name]: e.target.value })
-	// 	}
-
-
-	submitHandler = (e,props) => 
-	{
-		// if (this.state.userId === "" || this.state.title === "" || this.state.body === "" )
-		// {
-		//	e.preventDefault()
-			
-		// 	console.log(this.state.id)	
-			
-		// 	console.log("boş")
-		
-           
-		// } else {
-        //     const id =props.match.params.id			
-		// 	console.log(this.state)
-			// axios
-			// 	.get('http://localhost:3004/posts/75')
-			// 	.then(response => {
-			// 		const data = response.data
-			// 		console.log(data)					
-			// 		this.setState({users:data});
-					
-		 	// 	})
-		// 		.catch(error => {
-		// 			console.log(error)
-		// 		})			
-		// }			
-    }
-    
-
-componentDidMount(e,props) 
-{
-	
-
-				axios
-				.get(this.state.getURL+this.state.id)
-				.then(response => 
-					{
-					const data = response.data
-					console.log(data)					
-					this.setState({users:data});
-					
-					  }
-					  )
+	userId: "",
+	title: "",
+	body: "",
+	id: props.match.params.id,
+	getURL: "http://localhost:3004/posts/",
+	degisim:[]
+}
 }
 
 
+changeHandler = e => {
+	this.setState({
+          
+		[e.target.name] : e.target.value
+	})
+	
+	this.state.degisim=this.state
+	//console.log(this.state.degisim)
+}
 
 
-
-
+updateUser = (e) => {
+	e.preventDefault();
 
    
-	render() {
-		const {id, userId, title, body } = this.state.users
-		return (
-			<div>				
-				<form onSubmit={this.submitHandler}>	
-				<p> 
-				<label>ID</label>
-  				<input
-				type="text"		
-				name="userId"
-				value={id}
-				//onChange={this.changeHandler}
-				/>
-				</p>				
-                <p> 
-				<label>User ID</label>
-  				<input
-				type="text"		
-				name="userId"
-				value={userId}
-				//onChange={this.changeHandler}
-				/>
-				</p>
-				
+	//this.state.degisim
+	const {id} = this.props.match.params;
+const degisim={
+	userId:this.state.userId,
+	title:this.state.title,
+	body:this.state.body
+}
+
+
+//console.log(veri)
+
+
+		const request = axios.put(`http://localhost:3004/posts/${id}`,degisim)
+				.then(response => {
+					console.log("response"+response.data)
+					//this.setState({degisim:response.data}) 
+					
+					
+				})
+
+this.props.history.push("/App");
+	
+ 	//axios.
+ //console.log("put sonrası:"+veri)
+	//dispatch({type: "UPDATE_USER",payload : response.data});
+
+	// Redirect
+	
+} 
+
+
+
+componentDidMount= async(e, props)=> {
+
+	//const { id } = props.match.params
+	//console.log(id)
+	const response = await axios.get(`http://localhost:3004/posts/${this.state.id}`)
+	const { userId, title, body } = response.data
+	console.log(response.data)
+	this.setState({
+		userId,
+		title,
+		body
+	});
+
+	
+	
+}
+
+
+render() {
+	const { id, userId, title, body } = this.state
+	return (
+		<div>
+			<form onSubmit={this.updateUser}>
 				<p>
-				<label>Title</label>
-  				<input
-				type="text"		
-				name="title"
-				value={title}
-				//onChange={this.changeHandler}
-				/>
+					<label>ID</label>
+					<input
+						type="text"
+						name="userId"
+						value={id}
+						id="id"
+
+						onChange={this.changeHandler}
+					/>
+				</p>
+				<p>
+					<label>User ID</label>
+					<input
+						type="text"
+						name="userId"
+						value={userId}
+						id="userId"
+						onChange={this.changeHandler}
+					/>
 				</p>
 
-			   <p>
-			   <label>Body</label>
-			   <input
-			   type="text"		
-			   name="body"
-			   value={body}
-			   //onChange={this.changeHandler}
-			   />
-			   </p>
-				
+				<p>
+					<label>Title</label>
+					<input
+						type="text"
+						name="title"
+						value={title}
+						id="title"
+						onChange={this.changeHandler}
+					/>
+				</p>
+
+				<p>
+					<label>Body</label>
+					<input
+						type="text"
+						name="body"
+						value={body}
+						id="body"
+						onChange={this.changeHandler}
+					/>
+				</p>
+
 				<button type="submit" class="btn btn-primary">Güncelle</button>
-				</form>
-			</div>
-			
-		)
-	}
+			</form>
+		</div>
+
+	)
+}
 }
 
 export default Update;
