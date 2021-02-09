@@ -1,9 +1,10 @@
 import React, { Component, props } from 'react'
 import axios from 'axios'
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
 import Update from "./Update"
 import App from "../App"
 import PostForm from './PostForm';
+import NotFound from './NotFound'
 
 class Todolist extends Component {
   state = {
@@ -41,8 +42,8 @@ class Todolist extends Component {
 
 
 
-  updateRow(id, e) {
-    console.log(id)
+  // updateRow(id, e) {
+  //   console.log(id)
 
 
 
@@ -62,17 +63,15 @@ class Todolist extends Component {
 
     //   })
 
-  }
+  //}
 
 
   render() {
     return (
+     
       <div>
 
-        <Switch>
-          <Route path="./App" exact component={App} />
-          <Route path="/Update/:id" component={Update} />
-        </Switch>
+      
 
         <h1>Kamera Bakım İşlemleri</h1>
 
@@ -93,8 +92,8 @@ class Todolist extends Component {
                 <td>{item.title}</td>
                 <td>{item.body}</td>
                 <td>
-                  <Link to="/App">  <button className="btn btn-danger" onClick={(e) => this.deleteRow(item.id, e)}>Sil</button></Link>
-                  <Link to={`/Update/${item.id}`}><button className="btn btn-info" onClick={(e) => this.updateRow(item.id, e)}>Düzenle</button></Link>
+                  <button className="btn btn-danger" onClick={(e) => this.deleteRow(item.id, e)}>Sil</button>
+                  <Link to={`/Update/${item.id}`}><button className="btn btn-info" >Düzenle</button></Link>
                 </td>
               </tr>
             ))}
@@ -103,6 +102,7 @@ class Todolist extends Component {
 
 
       </div>
+      
     )
   }
 }

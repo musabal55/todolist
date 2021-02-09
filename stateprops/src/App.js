@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import Urunler from './components/Urunler'
+import Arizalar from './components/Arizalar'
+import Satislar from './components/Satislar'
 
 class App extends Component {
     render() {
-        const title = "derinkod"
         return (
             <div>
-                <Urunler title={title} />
+              <Arizalar arizaKaydi="55"/>  
+              <Satislar urunAdi="Matkap"/>
             </div>
         )
     }
 }
+
 export default App;
